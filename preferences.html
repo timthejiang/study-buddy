@@ -33,7 +33,7 @@ $(document).ready(function(){
   $('.class-options li > a').click(function(e){
     // $('.status').text(this.innerHTML);
     // alert(this.innerHTML);
-    $("#cuton").prepend('<li><a href="#">'+this.innerHTML+'</a></li>');
+    $("#added-classes").prepend('<li><a href="#">'+this.innerHTML+'</a></li>');
     $(".close-modal").click();
 });
 });
@@ -65,7 +65,7 @@ $(document).ready(function(){
                 <li><a href="#contact">CS 465</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes <span class="caret"></span></a>
-                  <ul class="dropdown-menu" id="cuton">
+                  <ul class="dropdown-menu" id="added-classes">
                     <li><a href="#">CS 425</a></li>
                     <li><a href="#">CS 225</a></li>
                     <li><a href="#">CS 373</a></li>

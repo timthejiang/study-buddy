@@ -4,6 +4,9 @@ body {
 .bs-example{
     	margin: 5px;
     }
-  .modal-dialog{
+#myModal .modal-dialog{
     width: 1100px;
   }
+#myModalMessage .modal-dialog{
+      width: 550px;
+    }

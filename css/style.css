@@ -10,6 +10,9 @@ body {
   color: white;*/
   padding-top: 70px;
 }
+#matching-container{
+  background-color: white;
+}
 
 #messaging-container {
   margin: 0 auto;
@@ -30,7 +33,7 @@ body {
   border: none;
   padding: 14px;
   color: white;
-  /*background: #6A6C75;*/
+  background: #F9F9F9;
   width: 90%;
   font-size: 14px;
 }

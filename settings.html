@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/matching.css">
     <link href="./css/navbar-brand.css" rel="stylesheet">
     <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/preferences.css">
 
 
@@ -75,7 +76,7 @@
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="./preferences.html">Preferences</a></li>
+                <li><a href="./settings.html">Settings</a></li>
                 <li><a href="#">Logout</a></li>
               </ul>
 
@@ -86,110 +87,99 @@
     </div>
   </nav>
 
-  <div class="container">
 
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron" id="matching-container">
-      <div class="row" id="tabstyle">
-        <ul>
-          <li>
-            <a href="#" class="clickme" data-toggle="modal" data-target="#myModal">
-              <h2>Title #1</h2>
-              <p>Text Content #1</p>
-              <!-- Trigger the modal with a button -->
-              <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-            </a>
-          </li>
-          <li>
-            <a href="#" id="task2">
-              <h2>Title #2</h2>
-              <p>Text Content #2</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h2>Title #3</h2>
-              <p>Text Content #3</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h2>Title #4</h2>
-              <p>Text Content #4</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h2>Title #5</h2>
-              <p>Text Content #5</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h2>Title #6</h2>
-              <p>Text Content #6</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h2>Title #2</h2>
-              <p>Text Content #2</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h2>Title #7</h2>
-              <p>Text Content #7</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h2>Title #8</h2>
-              <p>Text Content #8</p>
-            </a>
-          </li>
-        </ul>
-    </div>
-        <center>
+ <div id="wrapper">
 
-  </div> <!-- /container -->
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href= "#">
+                        Basic Information
+                    </a>
+                </li>
+                <li>
+                    <a href="./general_preferences.html">General Preferences</a>
+                </li>
+             </ul>
+        </div> </div>
+        <!-- /#sidebar-wrapper -->
+ <div class="container col-md-4 col-md-offset-4" id="login-container" align="center">
+      <h1>Basic Information</h1>
+      
+   <p>Edit your basic profile information</p>
+      <form role="form">
+          <div class="row">
+              <div class="form-group col-lg-1">
+                  <label for="code"> Username:</label><input type="text" id="name" class="form-control" style="width:500px"/>
+              </div>
+          </div>
 
-  <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+          <div class="row">
+              <div class="form-group col-lg-1 ">
+                  <label for="code">email:</label><input type="text" id="email" class="form-control input-normal" style="width:500px"/>
+              </div>
+          </div>
+     <div class="row">
+              <div class="form-group col-lg-1 ">
+                  <label for="code">Password:</label><input type="password" id="pass" class="form-control input-normal" style="width:500px"/>
+ 
+              </div>
+          </div>
+       <div class="row" >
+              <div class="form-group col-lg-1 ">
+                 <label for="code">Picture:</label><input type='file' style="width:500px;"/>
+                 <img id="pic" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="Image" height="100" width= "100" />
+    		 </div>
+              </div>
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu class-options">
-      <li class="dropdown-header">Dropdown header 1</li>
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-      <li class="divider"></li>
-      <li class="dropdown-header">Dropdown header 2</li>
-      <li><a href="#">About Us</a></li>
-    </ul>
+          <div class="row">
+              <div class="form-group col-lg-1 " >
+                  <a href="#" class="btn btn-warning" style="width:300px" onclick="save();">Save changes</a>
+              </div>
+          </div>
+
+
+      </form>
+     
   </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button"  class="btn btn-default close-modal" data-dismiss="modal">Close</button>
-      </div>
-    </div>
 
-  </div>
-</div>
-</div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="./js/ie10-viewport-bug-workaround.js"></script>
+ <script>
+$(function () {
+    $(":file").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+function imageIsLoaded(e) {
+    $('#pic').attr('src', e.target.result);
+};
+</script> 
+<script>
+function save() {
+   name = $('input[id="name"]').val();
+   pass = $('input[id="pass"]').val();
+   email = $('input[id="email"]').val();
+   pic=  $('#pic').attr('src');
+   localStorage.setItem("name", name);
+   localStorage.setItem("pass", pass);
+   localStorage.setItem("email", email);
+   localStorage.setItem("pic", pic);
+}
+</script>
+<script>
+window.onload = function getLocalStorage() {
+document.getElementById("name").value=(localStorage.getItem("name"));
+document.getElementById("pass").value=(localStorage.getItem("pass"));
+document.getElementById("email").value=(localStorage.getItem("email"));
+document.getElementById("pic").src=(localStorage.getItem("pic"));
+}
+   
+</script>
 </body>
+
 </html>

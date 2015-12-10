@@ -52,7 +52,7 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <a class="navbar-brand" href="#">Study Buddy</a>
+    <a class="navbar-brand" href="#" id="title">Study Buddy</a>
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
                 <li><a href="./classpage.html">CS 465</a></li>
@@ -72,11 +72,12 @@
 
         <!-- <ul class="nav navbar-nav navbar-right"> -->
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./contacts.html"><i class="fa fa-2x fa-users"></i></a></li>
-            <li><a href="./messaging.html"><i class="fa fa-2x fa-envelope"></i></a></li>
-            <li><a href="./calendar.html"><i class="fa fa-2x fa-calendar-o"></i></a></li>
+            <li><a href="./contacts.html" data-toggle="tooltip" title="Contacts"><i class="fa fa-2x fa-users"></i></a></li>
+            <li><a href="./messaging.html" data-toggle="tooltip" title="Messages"><i class="fa fa-2x fa-envelope"></i></a></li>
+            <li><a href="./calendar.html" data-toggle="tooltip" title="Calendar"><i class="fa fa-2x fa-calendar-o"></i></a></li>
+              <li><a href="./preferences.html" data-toggle="tooltip" title="Preferences"><i class="fa fa-2x fa-wrench"></i></a></li>
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Settings"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="./preferences.html">Preferences</a></li>
                 <li><a href="#">Logout</a></li>

@@ -1,6 +1,16 @@
 body {
   padding-top: 70px;
 }
+@font-face {
+   font-family: myFirstFont;
+   src: url('./Eight_One.ttf');
+
+}
+#title {
+   font-family: myFirstFont;
+   font-weight: bold;
+   font-size: xx-large;
+}
 .icon {
     margin: .5em;
 }

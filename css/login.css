@@ -1,0 +1,11 @@
+body {
+  padding-top: 100px;
+}
+#login-container{
+  background-color: white;
+  text-align: center;
+}
+.center_div{
+    margin: 0 auto;
+    width:80% /* value of your choice which suits your alignment */
+}

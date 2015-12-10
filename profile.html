@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -30,96 +30,103 @@
     <![endif]-->
   </head>
 
-  <body>
+<body>
     <nav class="navbar navbar-default navbar-fixed-top" id="navbar-custom" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" href="#" id="title">Study Buddy</a>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="./classpage.html">CS 465</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes <span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="added-classes">
+                            <li><a href="./empty_class_page.html">CS 425</a></li>
+                            <li><a href="./empty_class_page.html">CS 225</a></li>
+                            <li><a href="./empty_class_page.html">CS 373</a></li>
+                            <li role="separator" class="divider"></li>
+                            <!--  <li class="dropdown-header">Add new class </li> -->
+                            <li><a href="#" data-toggle="modal" data-target="#myModalClass">Add New Class</a></li>
+                            <!--  <li><a href="#">One more separated link</a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- <ul class="nav navbar-nav navbar-right"> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./contacts.html" data-toggle="tooltip" title="Contacts"><i class="fa fa-2x fa-users"></i></a></li>
+                    <li><a href="./messaging.html" data-toggle="tooltip" title="Messages"><i class="fa fa-2x fa-envelope"></i></a></li>
+                    <li><a href="./calendar.html" data-toggle="tooltip" title="Calendar"><i class="fa fa-2x fa-calendar-o"></i></a></li>
+                    <li><a href="./general_preferences.html" data-toggle="tooltip" title="Preferences"><i class="fa fa-2x fa-wrench"></i></a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Settings"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="./myprofile.html">My Profile</a></li>
+                            <li><a href="./preferences.html">Preferences</a></li>
+
+                            <li><a href="./settings.html"> Account Settings</a></li>
+
+                            <li><a href="./login.html">Logout</a></li>
+                        </ul>
+
+                    </li>
+                </ul>
+                <!-- </ul> -->
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <a class="navbar-brand" href="#">Study Buddy</a>
-      <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-left">
-                <li><a href="./classpage.html">CS 465</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">CS 425</a></li>
-                    <li><a href="#">CS 225</a></li>
-                    <li><a href="#">CS 373</a></li>
-                    <li role="separator" class="divider"></li>
-                  <!--  <li class="dropdown-header">Add new class </li> -->
-                    <li><a href="#">Add New Class</a></li>
-                  <!--  <li><a href="#">One more separated link</a></li> -->
-                  </ul>
-                </li>
-              </ul>
 
-        <!-- <ul class="nav navbar-nav navbar-right"> -->
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="./contacts.html"><i class="fa fa-2x fa-users"></i></a></li>
-            <li><a href="./messaging.html"><i class="fa fa-2x fa-envelope"></i></a></li>
-            <li><a href="./calendar.html"><i class="fa fa-2x fa-calendar-o"></i></a></li>
-            <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="./myprofile.html">My Profile</a></li>
-                <li><a href="./preferences.html">Preferences</a></li>
-                <li><a href="#">Logout</a></li>
-              </ul>
-
-            </li>
-          </ul>
-        <!-- </ul> -->
-      </div>
-    </div>
-  </nav>
-
-  <div class="container">
-
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron" id="matching-container">
-      <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-3">
-            <center>
-              <div class="row">
-                <h3>Vincent Porter</h3>
-              </div>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" width="95%">
-              <div class="row">
-              </div>
-            </center>
-          </div>
-          <div class="col-md-5">
-            <div class="comdif">
-              <h4><u>About Me</u><h4>
-              <ul>
-                <li>Classes: CS 425</li>
-                <li>Short Term Goals: front-end development</li>
-                <li>Expected Grade: A</li>
-                <li>Strengths: Hardworking, Neat</li>
-                <li>Timings: Wednesdays 7-10pm</li>
-                <li>Hobbies: Swimming, Reading</li>
-                <li>Year: Freshman</li>
-              </ul>
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron" id="matching-container">
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-3">
+                    <center>
+                        <div class="row">
+                            <h3>Vincent Porter</h3>
+                        </div>
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" width="95%">
+                        <div class="row">
+                        </div>
+                    </center>
+                </div>
+                <div class="col-md-5">
+                    <div class="comdif">
+                        <h4>
+                            <u>About Me</u><h4>
+                                <ul>
+                                    <li>Classes: CS 425</li>
+                                    <li>Short Term Goals: front-end development</li>
+                                    <li>Expected Grade: A</li>
+                                    <li>Strengths: Hardworking, Neat</li>
+                                    <li>Timings: Wednesdays 7-10pm</li>
+                                    <li>Hobbies: Swimming, Reading</li>
+                                    <li>Year: Freshman</li>
+                                </ul>
+                    </div>
+                </div>
             </div>
-            </div>
-            </div>
-          </div>
+        </div>
         <center>
-    <div class="row"><div class="row">      </div>
-    </div>
+            <div class="row">
+                <div class="row">      </div>
+            </div>
 
-  </div> <!-- /container -->
+    </div> <!-- /container -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

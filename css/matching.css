@@ -18,10 +18,10 @@ body {
     margin-top: 15%;
 }
 .comdif {
-    margin-top: 4em;
+    margin-top: 1em;
 }
 .block {
-    margin-top: 2em;
+    margin: -2em;
 }
 .cover-container {
     height: 180px;
@@ -46,4 +46,18 @@ body {
 }
 #matching-container{
   background-color: #F9F9F9;
+}
+
+#mrow {
+    margin-bottom: 3em;
+}
+
+#simrow {
+    margin-top: 4em;
+}
+
+.transp {
+    background:none;
+    border:none;
+    box-shadow:none;
 }

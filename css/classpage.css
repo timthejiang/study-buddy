@@ -4,3 +4,13 @@ body {
 #activity-container{
   background-color: white;
 }
+@font-face {
+   font-family: myFirstFont;
+   src: url('./Eight_One.ttf');
+
+}
+#title {
+   font-family: myFirstFont;
+   font-weight: bold;
+   font-size: xx-large;
+}

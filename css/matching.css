@@ -23,6 +23,12 @@ body {
 .block {
     margin: -2em;
 }
+
+.myimg{
+  border-radius: 37px;
+  width: 60px;
+}
+
 .cover-container {
     height: 180px;
     width: 90%;
@@ -45,7 +51,8 @@ body {
     background-size: cover;
 }
 #matching-container{
-  background-color: #F9F9F9;
+  /*background-color: #F9F9F9;*/
+  background-color: white;
 }
 
 #mrow {

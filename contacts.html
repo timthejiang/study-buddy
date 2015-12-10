@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -40,12 +40,20 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="./js/ie-emulation-modes-warning.js"></script>
     <script src='./js/fullcalendar.js'></script>
+        <script src="./js/addclass.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#myModal').on('shown.bs.modal', function() {
+        $(".fc-button-agendaWeek").click();
+    });
+      });
+    </script>
   </head>
 
   <body>
@@ -58,19 +66,19 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <a class="navbar-brand" href="#">Study Buddy</a>
+      <a class="navbar-brand" href="#" id="title">Study Buddy</a>
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
                 <li><a href="./classpage.html">CS 465</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">CS 425</a></li>
-                    <li><a href="#">CS 225</a></li>
-                    <li><a href="#">CS 373</a></li>
+                  <ul class="dropdown-menu" id="added-classes">
+                    <li><a href="./empty_class_page.html">CS 425</a></li>
+                    <li><a href="./empty_class_page.html">CS 225</a></li>
+                    <li><a href="./empty_class_page.html">CS 373</a></li>
                     <li role="separator" class="divider"></li>
                   <!--  <li class="dropdown-header">Add new class </li> -->
-                    <li><a href="#">Add New Class</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModalClass">Add New Class</a></li>
                   <!--  <li><a href="#">One more separated link</a></li> -->
                   </ul>
                 </li>
@@ -78,14 +86,19 @@
 
         <!-- <ul class="nav navbar-nav navbar-right"> -->
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./contacts.html"><i class="fa fa-2x fa-users"></i></a></li>
-            <li><a href="./messaging.html"><i class="fa fa-2x fa-envelope"></i></a></li>
-            <li><a href="./calendar.html"><i class="fa fa-2x fa-calendar-o"></i></a></li>
+            <li><a href="./contacts.html" data-toggle="tooltip" title="Contacts"><i class="fa fa-2x fa-users"></i></a></li>
+            <li><a href="./messaging.html" data-toggle="tooltip" title="Messages"><i class="fa fa-2x fa-envelope"></i></a></li>
+            <li><a href="./calendar.html" data-toggle="tooltip" title="Calendar"><i class="fa fa-2x fa-calendar-o"></i></a></li>
+              <li><a href="./general_preferences.html" data-toggle="tooltip" title="Preferences"><i class="fa fa-2x fa-wrench"></i></a></li>
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Settings"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
               <ul class="dropdown-menu">
+
                 <li><a href="./myprofile.html">My Profile</a></li>
                 <li><a href="./preferences.html">Preferences</a></li>
+
+                <li><a href="./settings.html"> Account Settings</a></li>
+
                 <li><a href="#">Logout</a></li>
               </ul>
 
@@ -396,6 +409,34 @@
     </div>
 
   </div>
+</div>
+
+<div id="myModalClass" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Modal Header</h4>
+    </div>
+    <div class="modal-body">
+      <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Classes
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu class-options">
+    <li><a href="#">CS 465</a></li>
+    <li><a href="#">CS 598</a></li>
+    <li><a href="#">CS 224</a></li>
+  </ul>
+</div>
+    </div>
+    <div class="modal-footer">
+      <button type="button"  class="btn btn-default close-modal" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
 </div>
 
 <script id="message-template" type="text/x-handlebars-template">

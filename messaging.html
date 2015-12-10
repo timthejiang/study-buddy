@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -21,11 +21,13 @@
     <link rel="stylesheet" href="css/reset.css">
     <!-- <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'> -->
     <link rel="stylesheet" href="css/style.css">
+        <script src="./js/addclass.js"></script>
 
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="./js/ie-emulation-modes-warning.js"></script>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -44,19 +46,19 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <a class="navbar-brand" href="#">Study Buddy</a>
+    <a class="navbar-brand" href="#" id="title">Study Buddy</a>
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
                 <li><a href="./classpage.html">CS 465</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">CS 425</a></li>
-                    <li><a href="#">CS 225</a></li>
-                    <li><a href="#">CS 373</a></li>
+                  <ul class="dropdown-menu" id="added-classes">
+                    <li><a href="./empty_class_page.html">CS 425</a></li>
+                    <li><a href="./empty_class_page.html">CS 225</a></li>
+                    <li><a href="./empty_class_page.html">CS 373</a></li>
                     <li role="separator" class="divider"></li>
                   <!--  <li class="dropdown-header">Add new class </li> -->
-                    <li><a href="#">Add New Class</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModalClass">Add New Class</a></li>
                   <!--  <li><a href="#">One more separated link</a></li> -->
                   </ul>
                 </li>
@@ -64,14 +66,19 @@
 
         <!-- <ul class="nav navbar-nav navbar-right"> -->
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./contacts.html"><i class="fa fa-2x fa-users"></i></a></li>
-            <li><a href="./messaging.html"><i class="fa fa-2x fa-envelope"></i></a></li>
-            <li><a href="./calendar.html"><i class="fa fa-2x fa-calendar-o"></i></a></li>
+            <li><a href="./contacts.html" data-toggle="tooltip" title="Contacts"><i class="fa fa-2x fa-users"></i></a></li>
+            <li><a href="./messaging.html" data-toggle="tooltip" title="Messages"><i class="fa fa-2x fa-envelope"></i></a></li>
+            <li><a href="./calendar.html" data-toggle="tooltip" title="Calendar"><i class="fa fa-2x fa-calendar-o"></i></a></li>
+              <li><a href="./general_preferences.html" data-toggle="tooltip" title="Preferences"><i class="fa fa-2x fa-wrench"></i></a></li>
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Settings"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
               <ul class="dropdown-menu">
+
                 <li><a href="./myprofile.html">My Profile</a></li>
                 <li><a href="./preferences.html">Preferences</a></li>
+
+                <li><a href="./settings.html"> Account Settings</a></li>
+
                 <li><a href="#">Logout</a></li>
               </ul>
 
@@ -93,7 +100,7 @@
        <i class="fa fa-search"></i>
      </div>
      <ul class="list">
-       <li class="clearfix">
+       <li class="clearfix" style="border:none; background: white">
          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
          <div class="about">
            <div class="name">Vincent Porter</div>
@@ -103,7 +110,7 @@
          </div>
        </li>
 
-       <li class="clearfix">
+       <li class="clearfix"  style="border:none; background: white" id="ac">
          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
          <div class="about">
            <div class="name">Aiden Chavez</div>
@@ -195,12 +202,93 @@
      </ul>
    </div>
 
-   <div class="chat">
+   <div class="chat" id="vincentkumar">
      <div class="chat-header clearfix">
        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
 
        <div class="chat-about">
          <div class="chat-with">Chat with Vincent Porter</div>
+         <div class="chat-num-messages">already 1 902 messages</div>
+       </div>
+       <i class="fa fa-star"></i>
+     </div> <!-- end chat-header -->
+
+     <div class="chat-history">
+       <ul>
+         <li class="clearfix">
+           <div class="message-data align-right">
+             <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
+             <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+
+           </div>
+           <div class="message other-message float-right">
+             Hi Vincent, how are you? How is the project coming along?
+           </div>
+         </li>
+
+         <li>
+           <div class="message-data">
+             <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+             <span class="message-data-time">10:12 AM, Today</span>
+           </div>
+           <div class="message my-message">
+             Are we meeting today? Project has been already finished and I have results to show you.
+           </div>
+         </li>
+
+         <li class="clearfix">
+           <div class="message-data align-right">
+             <span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;
+             <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+
+           </div>
+           <div class="message other-message float-right">
+             Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last phase of the project?
+           </div>
+         </li>
+
+         <li>
+           <div class="message-data">
+             <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+             <span class="message-data-time">10:20 AM, Today</span>
+           </div>
+           <div class="message my-message">
+             Actually everything was fine. I'm very excited to show this to our team.
+           </div>
+         </li>
+
+         <li>
+           <div class="message-data">
+             <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+             <span class="message-data-time">10:31 AM, Today</span>
+           </div>
+           <i class="fa fa-circle online"></i>
+           <i class="fa fa-circle online" style="color: #AED2A6"></i>
+           <i class="fa fa-circle online" style="color:#DAE9DA"></i>
+         </li>
+
+       </ul>
+
+     </div> <!-- end chat-history -->
+
+     <div class="chat-message clearfix">
+       <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
+
+       <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+       <i class="fa fa-file-image-o"></i>
+
+       <button>Send</button>
+
+     </div> <!-- end chat-message -->
+
+   </div> <!-- end chat -->
+
+   <div class="chat" id="aidenkumar" style="display:none">
+     <div class="chat-header clearfix">
+       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
+
+       <div class="chat-about">
+         <div class="chat-with">Chat with Aiden Chavez</div>
          <div class="chat-num-messages">already 1 902 messages</div>
        </div>
        <i class="fa fa-star"></i>
@@ -313,9 +401,48 @@
   </div>
   </div> <!-- /container -->
 
+
+  <div id="myModalClass" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Classes
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu class-options">
+      <li><a href="#">CS 465</a></li>
+      <li><a href="#">CS 598</a></li>
+      <li><a href="#">CS 224</a></li>
+    </ul>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  class="btn btn-default close-modal" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="./js/ie10-viewport-bug-workaround.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("li.clearfix").css('cursor','pointer');
+
+      $("#ac").click(function(){
+        $("#vincentkumar").css('display','none');
+        $("#aidenkumar").css('display', 'block');
+      });
+    });
+  </script>
 </body>
 </html>

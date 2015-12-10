@@ -11,8 +11,7 @@
     <title>Study Buddy</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <!-- <link href="./css/navbar-fixed-top.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -22,6 +21,10 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="./js/ie-emulation-modes-warning.js"></script>
+        <script src="./js/addclass.js"></script>
+
+    <link href="./css/carousel.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,19 +43,19 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <a class="navbar-brand" href="#">Study Buddy</a>
+    <a class="navbar-brand" href="#" id="title">Study Buddy</a>
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
                 <li><a href="./classpage.html">CS 465</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">CS 425</a></li>
-                    <li><a href="#">CS 225</a></li>
-                    <li><a href="#">CS 373</a></li>
+                  <ul class="dropdown-menu" id="added-classes">
+                    <li><a href="./empty_class_page.html">CS 425</a></li>
+                    <li><a href="./empty_class_page.html">CS 225</a></li>
+                    <li><a href="./empty_class_page.html">CS 373</a></li>
                     <li role="separator" class="divider"></li>
                   <!--  <li class="dropdown-header">Add new class </li> -->
-                    <li><a href="#">Add New Class</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModalClass">Add New Class</a></li>
                   <!--  <li><a href="#">One more separated link</a></li> -->
                   </ul>
                 </li>
@@ -60,14 +63,19 @@
 
         <!-- <ul class="nav navbar-nav navbar-right"> -->
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./contacts.html"><i class="fa fa-2x fa-users"></i></a></li>
-            <li><a href="./messaging.html"><i class="fa fa-2x fa-envelope"></i></a></li>
-            <li><a href="./calendar.html"><i class="fa fa-2x fa-calendar-o"></i></a></li>
+            <li><a href="./contacts.html" data-toggle="tooltip" title="Contacts"><i class="fa fa-2x fa-users"></i></a></li>
+            <li><a href="./messaging.html" data-toggle="tooltip" title="Messages"><i class="fa fa-2x fa-envelope"></i></a></li>
+            <li><a href="./calendar.html" data-toggle="tooltip" title="Calendar"><i class="fa fa-2x fa-calendar-o"></i></a></li>
+              <li><a href="./general_preferences.html" data-toggle="tooltip" title="Preferences"><i class="fa fa-2x fa-wrench"></i></a></li>
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Settings"><i class="fa fa-2x fa-gear"></i> <span class="caret"></span></a>
               <ul class="dropdown-menu">
+<<<<<<< HEAD
                 <li><a href="./myprofile.html">My Profile</a></li>
                 <li><a href="./preferences.html">Preferences</a></li>
+=======
+                <li><a href="./settings.html"> Account Settings</a></li>
+>>>>>>> b2a5b5343ec0e7989df603e18e18b7b9df25938a
                 <li><a href="#">Logout</a></li>
               </ul>
 
@@ -78,69 +86,226 @@
     </div>
   </nav>
 
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Recipient:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Message:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
 
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron" id="matching-container">
-      <div class="row">
-        <div class="col-md-2 vcenter">
-          <i class="fa fa-4x fa-arrow-left"></i>
-        </div>
-          <div class="col-md-3">
-            <center>
-              <div class="row">
-                <h3>John Doe</h3>
+
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active">
+            <img src="https://cdn-images-1.medium.com/max/48/0*Vv6UTqCzqSC12J-1.jpeg"/>
+          </li>
+          <li data-target="#myCarousel" data-slide-to="1">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/celikovic/128.jpg" width=99%/>
+          </li>
+          <li data-target="#myCarousel" data-slide-to="2">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg" width="99%"/>
+          </li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="col-md-5">
+                    <div class="row">
+                      <h3>John Doe</h3>
+                    </div>
+                    <img src="https://cdn-images-1.medium.com/max/800/0*Vv6UTqCzqSC12J-1.jpeg" width="95%">
+                    <div class="row">
+
+                      <!-- Small modal -->
+                      <button type="button" class="btn transp" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fa fa-3x fa-pencil-square-o icon"></i></button>
+
+
+
+                      <button type="button" class="btn transp">
+                        <i class="fa fa-3x fa-times-circle-o icon"></i>
+                      </button>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-6" align="left" id="simrow">
+                  <div>
+                    <h4><u>Similarities</u><h4>
+                    <ul>
+                      <li>Short Term Goals: front-end development</li>
+                      <li>Expected Grade: A</li>
+                      <li>Strengths: hardworking, neat</li>
+                      <li>Timings: Wednesdays 7-10pm</li>
+                    </ul>
+                  </div>
+                  <div class="comdif">
+                    <h4><u>Differences</u><h4>
+                    <ul>
+                      <li>Hobbies: swimming, literature</li>
+                      <li>Year: Masters
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <img src="https://cdn-images-1.medium.com/max/800/0*Vv6UTqCzqSC12J-1.jpeg" width="95%">
-              <div class="row">
-                <i class="fa fa-3x fa-pencil-square-o icon"></i>
-                <i class="fa fa-3x fa-times-circle-o icon"></i>
+            </div>
+          </div>
+          <div class="item">
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="col-md-5">
+                    <div class="row">
+                      <h3>Josh Hanson</h3>
+                    </div>
+                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/celikovic/128.jpg" width="95%">
+                    <div class="row">
+
+                      <!-- Small modal -->
+                      <button type="button" class="btn transp" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fa fa-3x fa-pencil-square-o icon"></i></button>
+
+
+
+                      <button type="button" class="btn transp">
+                        <i class="fa fa-3x fa-times-circle-o icon"></i>
+                      </button>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-6" align="left" id="simrow">
+                  <div>
+                    <h4><u>Similarities</u><h4>
+                    <ul>
+                      <li>Short Term Goals: front-end development</li>
+                      <li>Expected Grade: A</li>
+                      <li>Strengths: hardworking, neat</li>
+                      <li>Timings: Wednesdays 7-10pm</li>
+                    </ul>
+                  </div>
+                  <div class="comdif">
+                    <h4><u>Differences</u><h4>
+                    <ul>
+                      <li>Hobbies: swimming, literature</li>
+                      <li>Year: Masters
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </center>
-          </div>
-          <div class="col-md-1">
-          </div>
-          <div class="col-md-5">
-            <div class="comdif">
-              <h4><u>Similarities</u><h4>
-              <ul>
-                <li>Short Term Goals: front-end development</li>
-                <li>Expected Grade: A</li>
-                <li>Strengths: hardworking, neat</li>
-                <li>Timings: Wednesdays 7-10pm</li>
-              </ul>
-            </div>
-            <div class="comdif">
-              <h4><u>Differences</u><h4>
-              <ul>
-                <li>Hobbies: swimming, literature</li>
-                <li>Year: Masters
-              </ul>
             </div>
           </div>
-          <div class="col-md-1 vcenter" align="right">
-            <i class="fa fa-4x fa-arrow-right"></i>
+          <div class="item">
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="col-md-5">
+                    <div class="row">
+                      <h3>Gabriel McDonald</h3>
+                    </div>
+                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg" width="95%">
+                    <div class="row">
+
+                      <!-- Small modal -->
+                      <button type="button" class="btn transp" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fa fa-3x fa-pencil-square-o icon"></i></button>
+
+
+
+                      <button type="button" class="btn transp">
+                        <i class="fa fa-3x fa-times-circle-o icon"></i>
+                      </button>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-6" align="left" id="simrow">
+                  <div>
+                    <h4><u>Similarities</u><h4>
+                    <ul>
+                      <li>Short Term Goals: front-end development</li>
+                      <li>Expected Grade: A</li>
+                      <li>Strengths: hardworking, neat</li>
+                      <li>Timings: Wednesdays 7-10pm</li>
+                    </ul>
+                  </div>
+                  <div class="comdif">
+                    <h4><u>Differences</u><h4>
+                    <ul>
+                      <li>Hobbies: swimming, literature</li>
+                      <li>Year: Masters
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row block">
-          <center>
-            <div class="cover-container">
-              <!-- START PANEL -->
-              <div class="cover-item" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg')"></div>
-              <div class="cover-item" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/zack415/128.jpg')"></div>
-              <div class="cover-item" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/nettatheninja/128.jpg')"></div>
-              <div class="cover-item" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg')"></div>
-              <div class="cover-item" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/marcosmoralez/128.jpg')"></div>
-              <div class="cover-item" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/celikovic/128.jpg')"></div>
-              <div class="cover-item" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg')"></div>
-              <div class="cover-item" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/tonystubblebine/128.jpg')"></div>
-          </div>
-      </div>
-    </div>
-        <center>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div><!-- /.carousel -->
       </div>
     </div>
   </div> <!-- /container -->
+
+  <div id="myModalClass" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Classes
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu class-options">
+      <li><a href="#">CS 465</a></li>
+      <li><a href="#">CS 598</a></li>
+      <li><a href="#">CS 224</a></li>
+    </ul>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  class="btn btn-default close-modal" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
